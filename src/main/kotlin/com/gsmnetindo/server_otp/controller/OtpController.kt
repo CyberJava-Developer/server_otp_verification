@@ -26,8 +26,8 @@ class OtpController {
         val codeOtp = otpService.createOtp()
 
         val client = NexmoClient.Builder()
-                .apiKey("5835e4a1")
-                .apiSecret("GGWWADl6NTXgCHZs")
+                .apiKey("6b45afe7")
+                .apiSecret("hvK8fD6LpGL8qBQZ")
                 .build()
         val formRequestBody = FormBody.Builder()
                 .add("apikey", "mzJGmrngJKo-R8XegOoHmLtnugJRSQzRxJSi99Lcws")
@@ -70,7 +70,7 @@ class OtpController {
 
 
         val text = codeOtp.toString()
-        val message = TextMessage("Vonage APIs", phoneNumber, text)
+        val message = TextMessage("S3status", phoneNumber, text)
         val response1: SmsSubmissionResponse = client.smsClient.submitMessage(message)
         for (responseMessage in response1.messages) {
             println(responseMessage)
